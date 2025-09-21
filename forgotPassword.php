@@ -18,6 +18,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $result = $stmt -> fetch(PDO::FETCH_ASSOC);
 
       if($result){
+         
+         $token = bin2hex(random_bytes(14));
+         $expiring =  $expiry = date('Y-m-d H:i:s', strtotime('+1 hour'));
          echo json_encode(['message' => 'user found']);
       }
       
