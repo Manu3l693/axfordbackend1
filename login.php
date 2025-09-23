@@ -36,11 +36,10 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
       echo json_encode(['error' => $errors]);
       exit;
    } else{
-      echo json_encode(['success' => true, 'message' => 'Log in Successful!. Redirecting...']);
+      echo json_encode(['success' => true, 'message' => 'Welcome back ' . $result['username']]);
       exit;
    }
 
-   $_SESSION['username'] = $result['username'];
 
 
    } catch (PDOException $errr) {

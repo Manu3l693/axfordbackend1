@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
       }
 
       create_user($db, $username, $email, $password);
-      echo json_encode(["success" => true, 'message' => 'Signup Successful! Redirecting...']);
+      echo json_encode(["success" => true, 'message' => 'Sign up successful, redirecting...']);
       exit;
       
 
