@@ -40,6 +40,10 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
       exit;
    }
 
+   require_once 'session.php';
+
+   $_SESSION['user_id'] = $result['id'];
+
 
 
    } catch (PDOException $errr) {
