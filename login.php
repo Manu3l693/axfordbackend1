@@ -40,6 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
       exit;
    }
 
+   $_SESSION['username'] = $result['username'];
+
 
    } catch (PDOException $errr) {
       echo json_encode(['errorMessage' => 'Something went wrong: '. $errr->getMessage()]);
