@@ -30,20 +30,16 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
    if(!if_email_exist($result) && is_password_correct($password, $result['password'])){
       $errors[] = 'The password you entered is incorrect!';
    }
-  
 
+   
+   
    if(!empty($errors)){
       echo json_encode(['error' => $errors]);
       exit;
    } else{
-      echo json_encode(['success' => true, 'message' => 'Welcome back ' . $result['username']]);
+      echo json_encode(['success' => true, 'message' => 'Welcome back ' . $result['username'], 'name' => $result['username']]);
       exit;
    }
-
-   require_once 'session.php';
-
-   $_SESSION['user_id'] = $result['id'];
-
 
 
    } catch (PDOException $errr) {
